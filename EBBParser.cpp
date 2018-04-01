@@ -36,39 +36,39 @@ void EBBParser::parseStream()
     const char* arg2 = strsep(&str, ",");
     const char* arg3 = strsep(&str, ",");
 
-    if (strcmp(cmd, "EM") == 0) {
+    if (memcmp(cmd, "EM", 2) == 0) {
         parseEM(arg1, arg2);
-    } else if (strcmp(cmd, "ND") == 0) {
+    } else if (memcmp(cmd, "ND", 2) == 0) {
         parseND();
-    } else if (strcmp(cmd, "NI") == 0) {
+    } else if (memcmp(cmd, "NI", 2) == 0) {
         parseNI();
-    } else if (strcmp(cmd, "PD") == 0) {
+    } else if (memcmp(cmd, "PD", 2) == 0) {
         sendAck();
-    } else if (strcmp(cmd, "PO") == 0) {
+    } else if (memcmp(cmd, "PO", 2) == 0) {
         parsePO(arg1, arg2, arg3);
-    } else if (strcmp(cmd, "QB") == 0) {
+    } else if (memcmp(cmd, "QB", 2) == 0) {
         parseQB();
-    } else if (strcmp(cmd, "QL") == 0) {
+    } else if (memcmp(cmd, "QL", 2) == 0) {
         parseQL();
-    } else if (strcmp(cmd, "QN") == 0) {
+    } else if (memcmp(cmd, "QN", 2) == 0) {
         parseQN();
-    } else if (strcmp(cmd, "QP") == 0) {
+    } else if (memcmp(cmd, "QP", 2) == 0) {
         parseQP();
-    } else if (strcmp(cmd, "SC") == 0) {
+    } else if (memcmp(cmd, "SC", 2) == 0) {
         parseSC(arg1, arg2);
-    } else if (strcmp(cmd, "SE") == 0) {
+    } else if (memcmp(cmd, "SE", 2) == 0) {
         parseSE(arg1, arg2, arg3);
-    } else if (strcmp(cmd, "SL") == 0) {
+    } else if (memcmp(cmd, "SL", 2) == 0) {
         parseSL(arg1);
-    } else if (strcmp(cmd, "SM") == 0) {
+    } else if (memcmp(cmd, "SM", 2) == 0) {
         parseSM(arg1, arg2, arg3);
-    } else if (strcmp(cmd, "SN") == 0) {
+    } else if (memcmp(cmd, "SN", 2) == 0) {
         parseSN(arg1);
-    } else if (strcmp(cmd, "SP") == 0) {
+    } else if (memcmp(cmd, "SP", 2) == 0) {
         parseSP(arg1, arg2, arg3);
-    } else if (strcmp(cmd, "TP") == 0) {
+    } else if (memcmp(cmd, "TP", 2) == 0) {
         parseTP(arg1);
-    } else if (strcmp(cmd, "v") == 0) {
+    } else if (memcmp(cmd, "v", 1) == 0) {
         parseV();
     } else
         sendError();
